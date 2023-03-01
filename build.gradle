@@ -1,0 +1,44 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
+    id 'application'
+}
+
+group = 'com.cc'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+dependencies {
+    def databinding_version = "7.0.3"
+    implementation "androidx.databinding:databinding-common:$databinding_version"
+    implementation "androidx.databinding:databinding-compiler-common:$databinding_version"
+
+    implementation "commons-io:commons-io:2.4"
+    implementation "com.xenomachina:kotlin-argparser:2.0.7"
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '1.8'
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = '1.8'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.compiler.main.MainKt'
+    }
+}
+
+application {
+    mainClassName = 'com.compiler.main.MainKt'
+}
