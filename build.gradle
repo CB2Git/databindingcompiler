@@ -17,7 +17,8 @@ dependencies {
     implementation "androidx.databinding:databinding-compiler-common:$databinding_version"
 
     implementation "commons-io:commons-io:2.4"
-    implementation "com.xenomachina:kotlin-argparser:2.0.7"
+    // https://mvnrepository.com/artifact/net.lingala.zip4j/zip4j
+    implementation 'net.lingala.zip4j:zip4j:2.11.5'
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
 }
 
